@@ -1,27 +1,8 @@
-#рамка вокруг сообщения для пользователя
-'''
-рекомендация по созданию рамки взята с источника stackoverflow.com
-'''
-from math import ceil, floor
-def boxed_msg(msg):
-    lines = msg.split('\n') # разбиваем строку на список строк
-    max_length = max([len(line) for line in lines]) # находим максимальную длину строки
-    horizontal = '+' + '-' * (max_length + 2) + '+\n' # строка горизонтальной рамки
-    res = horizontal
-    for l in lines:
-        res += format_line(l, max_length) # добавляем к строке горизонтальной рамки строку с выравниванием
-    res += horizontal
-    return res.strip()
-
-def format_line(line, max_length):
-    half_dif = (max_length - len(line)) / 2
-    return '| ' + ' ' * ceil(half_dif) + line + ' ' * floor(half_dif) + ' |\n'
-
-
-print(boxed_msg('Чтобы выбраться вы должны разгадать загадку'))
-
+print('Чтобы выбраться вы должны разгадать загадку')
+print('+-----------------------------------------+')
 # выводим рандомное число с 3 до 20
-print(boxed_msg('Выход из ловушки за этими дверями'))
+print('Выход из ловушки за этими дверями')
+print('+-----------------------------------------+')
 print()
 import random
 
@@ -48,4 +29,5 @@ print()
 print()
 
 if result == this_exit(n):
-    print(boxed_msg('Ты разгадал загадку и вышел из ловушки!'))
+    print('+-----------------------------------------+')
+    print('Ты разгадал загадку и вышел из ловушки!')
